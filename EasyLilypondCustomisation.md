@@ -277,7 +277,7 @@ Most importantly, I am not making scholarly critical editions.  I am not a profe
 
 If you are a professional musicologist, and you do have access to primary sources, and you are able to show me a digital copy, I would welcome suggestions and corrections from you. 
 
-The last word goes to Thomas Morley:
+The last word goes to [Thomas Morley](https://imslp.org/wiki/A_Plain_and_Easy_Introduction_to_Practical_Music_(Morley,_Thomas)):
 
 > “The paines of making whereof, though they have beene peculier to mee, and onely to mee: yet will the profit redound to a great number. ... But seeing in these latter daies and doting age of the worlde, there is nothing more subiect to calumnie and backbiting then that which is most true & right: and that as there be many who will enter into the reading of my booke for their instruction : so I doubt not but diverse also will read it, not so much for anie pleasure or profit they looke for in it, as to finde something whereat to repine, or take occasionn of backbyting.  
 > 
