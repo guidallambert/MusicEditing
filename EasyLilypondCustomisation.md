@@ -32,11 +32,11 @@
 
 When looking for a score of some music on CPDL, how many times have you thought “I wish that edition was a tone higher” or “the music font is much too big” and so on?  CPDL is great, but finding the right piece in the format which is right for you can be time-consuming, dispiriting and (too often) ultimately fruitless.
 
-Sometimes the creator of each edition provides the editable source they used to generate their PDF file.  They are trying to be helpful of course, but even when they do, it is often in a proprietary format, chained to an expensive piece of music editing software like Sibelius, Finale, Capella and so on.   Even if you can afford one of these, you probably can’t afford all of them, and nor can you afford to learn how to use them all.
+Sometimes the creator of each edition provides the editable source they used to generate their PDF file.  They are trying to be helpful of course, but even when they do, it is often in a proprietary format, chained to an expensive piece of music editing software like Sibelius, Finale, Capella and so on.   Even if you can afford one of these, you probably can’t afford all of them, and nor can you likely afford the time to learn how to use them all.
 
-I prepare all my scores in Lilypond because it is free, and because it can create the highest standard of musical engraving.  It is very powerful and versatile.
+All my scores are in Lilypond because it is free, and because I think it can create the highest standard of musical engraving.  It is very powerful and versatile.
 
-But Lilypond has a big problem:  it is extremely intimidating for new users.  Because of this, I structure my Lilypond source files so it’s easy to change common parameters without having to learn how to use Lilypond first.  Once you understand my simple conventions, it becomes a trivial matter to change:
+But Lilypond has a big problem, that it is extremely intimidating for new users.  Because of this, I structure my Lilypond source files so it’s easy to change the common things without having to learn how to use Lilypond first.  Once you understand my simple conventions, it becomes a trivial matter to change:
 
 * Pitch (transposition)
 * Clefs  (ie. voices)
@@ -52,18 +52,28 @@ In addition, I try to include prefatory staves where I can, to show original pit
 
 ## 1.1 <a name='Howdoistart'></a> How do I start?
 
-Theoretically, all you need to do is download Lilypond from lilypond.org. However I also strongly recommend downloading Frescobaldi (from Frescobaldi.org), which is an excellent Lilypond Editor.  Without Frescobaldi you would just be using a plain text editor like Notepad to tweak the Lilypond source files – perfectly possible but much less than optimal.
+Theoretically, all you need to do is download Lilypond from lilypond.org. However I also strongly recommend downloading [Frescobaldi](Frescobaldi.org), which is an excellent Lilypond Editor.  Without Frescobaldi you would just be using a plain text editor like Notepad to tweak the Lilypond source files – perfectly possible but much less than optimal.
 
 There is much more information about both Lilypond and Frescobaldi at their respective web-sites. They will walk you through installing Frescobaldi and Lilypond (you need both btw) much better than I can.  Obviously this is not a comprehensive set of instructions on how to use those pieces of software.
-Download one of my source files, from the CPDL page of whichever of my editions interests you, using the ‘Lilypond’ link.  It will arrive as a file whose name ends in “.ly”.  Despite this exotic file name, it is actually just a text file containing instructions from me to Lilypond to generate a score in PDF format.  Save it in a convenient folder and open it in Frescobaldi.  
+
+Download one of my source files, from the CPDL page of whichever of my editions interests you, using the ‘Lilypond’ link.  It will arrive as a zipped set of files whose names end in “.ly”.  Despite this exotic file name, these are actually just text files containing instructions from me to Lilypond to generate a score in PDF format.  
+
+Typically there will be three or four (occasionally more) files:
+
+*  __Global_Score_block.ly__ (you can ignore this)
+* __Music_Lyrics_Notes.ly__ (you can ignore this too)
+* one or more files named like __[Composer] - [title] - [date] - [pitch and voicing].ly__ - these are the ones you need to look at.  There is one for each pitch option I provided on CPDL.  For example if I provided 2 editions (one at the original source pitch and one transposed up for modern choir) there will be two files like this, one for each score I provided.  These files are typically very similar to each other: in fact the only differences between them are the tweaks I go through in this document!  You can even use them as specimens of the sort of changes you're about to learn.
+
+Save these in a convenient folder and open the one you're interested in in Frescobaldi.  
 
 On the left you will see the instructions I typed into the .ly file to generate the PDF score.  It is the appearance of these instructions which so intimidates new users.  They look nothing like music!
 To generate a fresh PDF score from the instructions, simply press Ctrl-M; you will need to do this every time you make an edit.  It can take a few seconds to generate a fresh score, and you will see some narrative from the PDF converter appear in the bottom left.
 
 Have a brief scroll through my Lilypond instructions (often called Lilypond ‘code’ or ‘markup’ or ‘source’).  You will see that the source is divided in to six major sections, each with a sub-heading.
-Here’s the good news:   you only need to worry about the first section.  
 
-The first section is very short, essentially a list of settings.  You can take all the rest of the source code as read.
+Here’s the good news: you only need to worry about the first section.  
+
+The first section is very short, essentially a list of settings.  You can take all the rest of the lilypond source code as read.
 
 ##  2. <a name='Parametersyoucanedit'></a>Parameters you can edit
 
@@ -74,7 +84,8 @@ So to specific edits you might want to make.
 Under section 1a is a line saying 
 
 	#(set-default-paper-size "a4")
-Just change “a4” to “a3” or “a5” or “tabloid” or “letter” etc. Include the double quotes as in the line above.   Use lower case.  For more details, and how to do landscape, see http://lilypond.web.fc2.com/v2.13.45/Documentation/notation/paper-size-and-automatic-scaling.html
+	
+Just change “a4” to “a3” or “a5” or “tabloid” or “letter” etc. Include the double quotes as in the line above.   Use lower case.  For more details, and how to do landscape, see [the lilypond documentation here](http://lilypond.web.fc2.com/v2.13.45/Documentation/notation/paper-size-and-automatic-scaling.html).
 
 Note: the size of the music font doesn’t change when you change paper size.  When you press Ctrl-M, Lilypond will automatically re-design and re-flow the score using the new paper size; it might now cover more or fewer pages than before; there might be a different number of systems on each page and other layout factors may change.
 
@@ -99,7 +110,7 @@ You might need to change these, especially if you have opted for a smaller paper
 
 This should be fairly self-explanatory.  Just change the size of the margin in millimetres by changing the number.  Notice the back-slash directly after the number.
 
-Once you’ve found this you should see settings for right-margin, top-margin and bottom-margin next to is in the source.
+Once you’ve found this you should see settings for right-margin, top-margin and bottom-margin next to it in the code.
 
 ###  2.4. <a name='Titles'></a>Titles
 
@@ -107,7 +118,7 @@ These are all in section 1b in case you need to tweak them.  You probably won’
 
 ###  2.5. <a name='Transposingtoadifferentpitch'></a>Transposing to a different pitch
 
-This is probably the most common thing you’ll want to do, and it is very simple.  At the top of section 1c, look for the line which says something like:
+This is probably the most common thing you’ll want to do, and it is very simple.  At the top of section 1c in the code, look for the line which says something like:
 
 	TranspositionInterval = c
 
@@ -145,9 +156,9 @@ These are specified in section 1d.  Look for a line like
 
 The staves in my scores are lettered A, B, C and so on, from the top to the bottom of the system.   This line tells Lilypond to put a treble clef (clef G2) at the beginning of the top stave of the main musical system.
 
-As you’ve probably guessed, you just need to change what’s in the double quotes to change the clef (including the quotes of course). The most common clefs are as follows:
+As you’ve probably guessed, you just need to change what’s in the double quotes to change the clef (including the quotes of course). The names you need to know to create most common clefs are as follows:
 
-code | clef
+code you type | clef that gets generated
 :--: | :--:
 “treble”	| 	G2
 “treble_8”	| 	G2 8ve bassa
@@ -160,8 +171,7 @@ So to make the third stave in the system into a “tenor voice” clef, you woul
 
 	StaveCClef =  "treble_8"
 
-There are many other clefs available in Lilypond, but most of them are to do with specialist notation or early music, so those are the main ones for every-day use. 
-Clefs need to be in lower case.
+There are many other clefs available in Lilypond, but most of them are to do with specialist notation or early music, so those are the main ones for every-day use. Clefs need to be in lower case.
 
 ###  2.7. <a name='StaveNames'></a>Stave Names
 
@@ -227,12 +237,15 @@ If my instructions are wrong or ambiguous, do let me know.
 ##  4. <a name='Finalisingthescore'></a>Finalising the score
 
 Don’t forget to save your changes regularly (Ctrl-S in Frescobaldi).
+
 When you’re happy with your changes, press Ctrl-Shift-P.  This will publish the score to a PDF (and a MIDI file). 
 
-These two new files will have the same name (but different extensions) as your .LY source file, and will be in the same folder as it.  They are your finished product, ready for printing and performing.
+These two new files will have the same name (but different extensions obviously) as your .LY source file, and will be in the same folder as it.  They are your finished product, ready for printing and performing.
 
 
 ##  5. <a name='SomenotesforadvancedLilypondusers'></a>Some notes for advanced Lilypond users
+
+That's basically it as far as basic tweaking is concerned. No need to read the following unless you're a Lilypond veteran, trying to undestand why my Lilypond source code doesn't look like yours :-).
 
 My scores use the completion note head engraver and the completion rest engraver.  This means that barlines can be moved around at will (up to a point, as described above), relying on Lilypond to tie notes.  Mensurstriche scores are also easily supported for those who like that sort of thing, and most of the code you need is already in the layout block. 
 
@@ -242,25 +255,28 @@ To remove prefatory staves, change the stave labels in the score block to point 
 
 Plainsong incipits are self-contained scores, and can be edited as usual.  At the moment, suppressing the note stem engraver makes the horizontal spacing much too narrow, so I am inserting s4 between each note.  Very tiresome, must fix.
 
-Note values can be halved and doubled using Frescobaldi’s Rhythm menu.  Apply the halving or doubling to everything in section 3.  You presumably want to change the time signature after doing this.   Of course, this actually changes the source, unlike most of the other edits in this document.
+Note values can be halved and doubled using Frescobaldi’s Rhythm menu.  Apply the halving or doubling to everything in section 3.  You presumably want to change the time signature after doing this.   Of course, this actually changes the code in the music_lyrics_notes.ly file, unlike most of the other edits in this document.
 
 All pitches are absolute; all rhythms are explicit.  
 
-Sorry, but I don’t conform the the ‘1 bar per source line’ convention.  This is for a few reasons: partly because most of my scores are of mensural music, so bars and barlines are part of the editorial content, not the musical text, and are subject to change after transcription, and partly to try and limit the line-length of the source.  Also, most of my actual Lilypond source is auto-generated and not designed to be human-readable.  You can use Frescobaldi to click around the source of course – I find this quite adequate for making the odd correction.
+Sorry, but I don’t conform the the ‘1 bar per line’ convention which seems to be prevalent in Lilypond code.  This is for a few reasons: partly because most of my scores are of mensural music, so bars and barlines are part of the editorial content, not the musical text, and are subject to change after transcription, and partly to try and limit the numbers of lines of the source.  Also, most of my actual Lilypond source is auto-generated and not designed to be human-readable.  You can use Frescobaldi to click around the source of course – I find this quite adequate for making the odd correction.
 
-MIDI instrument is set at the ChoirStaff level using a variable in section 1e.  The default is ‘ocarina’, because I find it the least offensive option on most cheapo GS MIDI synths.  You may disagree, hence the variable. ( I wish Lilypond supported MIDI stereo panning and even reverb somehow – it would make such a difference!)
+MIDI instrument is set at the ChoirStaff level using a variable in section 1e.  The default is ‘ocarina’, because I find it the least offensive option on most cheapo GS MIDI synths.  You may disagree, hence the variable.
 
-Any staff annotations or changes part-way through the music (eg. Time signature) will be sitting inside the notes for stave A in section 3.
+Any staff annotations or changes part-way through the music (eg. Time signature) will be sitting inside the notes for stave A in section 3 (music_lyrics_notes.ly) only .
 
-Lyrics’ melismata are done using slurs which are then hidden.  I find this approach reduces trial and error when lining up music and lyrics.
+Lyrics’ melismata are done using \melisma and \melismaEnd pairs.  Older scores of mine used to use slurs which were then hidden by removing the slur engraver.  I find this approach reduces trial and error when lining up music and lyrics.
 
 Apart from that, everything’s standard Lilypond stuff I think
 
 ##  6. <a name='Notesaboutmyeditorialapproach'></a>Notes about my editorial approach
 
 I assume:
+
 * Modern musicians (particularly singers) need modern clefs, explicit underlay, a score at the correct performing pitch, bar lines (not mensurstriche) and bar numbers.
+
 * For rehearsal purposes keyboard players can busk most scores without a reduction, which would take up a disproportionate amount of page space and transcription time, so I don’t provide one.
+
 * Altos can read treble 8ve bassa clefs.
 
 I bracket staves together to indicate that they have near-identical ranges.  It’s up to you to decide whether to allocate similar voice types to them.
@@ -269,17 +285,15 @@ I err on the non-interventionist side when it comes to rhythmic note values beca
 
 I retain original stave names, to give a flavour of the voice types possibly held in mind by the composer, while recognising that these were and still are very flexible.
 
-I provide editions at multiple pitches, including the publication or manuscript pitch, the likely intended performance pitch (eg. If chiavetti transposition is likely), a suggested viable equivalent modern pitch and the prevailing ‘popular’ pitch if there is one.   I will change clefs to minimise leger lines in each case 
+I often provide editions at multiple pitches, perhaps including the publication or manuscript pitch, the likely intended performance pitch (eg. If chiavetti transposition is likely), a suggested viable equivalent modern pitch and the prevailing ‘popular’ pitch if there is one.   I will change clefs to minimise leger lines in each case 
 
 I don’t italicise editorial underlay.  Pre-modern music publications were never very explicit about lyric underlay, so all lyrics are editorial to a certain extent.
 
 I don’t mark accidentals if they are caused by a modernised key signature, or are clearly required by repeated notes in the source.  Only where I have to make an explicit choice do I mark them.
 
-Most importantly, I am not making scholarly critical editions.  I am not a professional musicologist, and I don’t have easy access to academic libraries.  I may be working second-hand from another edition.  I will try and investigate what the source looked like to help you make performing decisions, but I may not have had first-hand knowledge.
+I am not making scholarly critical editions.  I am not a professional musicologist, and I don’t have easy access to academic libraries.  I may be working second-hand from another edition.  I will try and investigate what the source looked like to help you make performing decisions, but I may not have had first-hand knowledge.  If I have not seen the original publication with my own eyes I will say so.
 
-If you are a professional musicologist, and you do have access to primary sources, and you are able to show me a digital copy, I would welcome suggestions and corrections from you. 
-
-The last word goes to [Thomas Morley](https://imslp.org/wiki/A_Plain_and_Easy_Introduction_to_Practical_Music_(Morley,_Thomas)):
+If you are a professional musicologist, and you do have access to primary sources, and you are able to show me a digital copy, I would welcome suggestions and corrections from you, although as [Thomas Morley](https://imslp.org/wiki/A_Plain_and_Easy_Introduction_to_Practical_Music_(Morley,_Thomas)) rather memorably puts it:
 
 > “The paines of making whereof, though they have beene peculier to mee, and onely to mee: yet will the profit redound to a great number. ... But seeing in these latter daies and doting age of the worlde, there is nothing more subiect to calumnie and backbiting then that which is most true & right: and that as there be many who will enter into the reading of my booke for their instruction : so I doubt not but diverse also will read it, not so much for anie pleasure or profit they looke for in it, as to finde something whereat to repine, or take occasionn of backbyting.  
 > 
