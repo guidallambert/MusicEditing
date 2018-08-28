@@ -3,6 +3,7 @@
 
 <!-- vscode-markdown-toc -->
 * 1. [Intro](#Intro)
+	* 1.1. [How do I start?](#Howdoistart)
 * 2. [Parameters you can edit](#Parametersyoucanedit)
 	* 2.1. [Paper size](#Papersize)
 	* 2.2. [Music Size](#MusicSize)
@@ -27,7 +28,7 @@
 
 
 
-##  1. Intro
+##  1. <a name='Intro'></a> Intro
 
 When looking for a score of some music on CPDL, how many times have you thought “I wish that edition was a tone higher” or “the music font is much too big” and so on?  CPDL is great, but finding the right piece in the format which is right for you can be time-consuming, dispiriting and (too often) ultimately fruitless.
 
@@ -48,7 +49,8 @@ But Lilypond has a big problem:  it is extremely intimidating for new users.  Be
 I hope this means people can use my transcriptions in a wide range of scenarios, to suit their own purposes, without having to choose between performing from an unsuitable score, or going through the drudgery of making their own transcription; they can do this using any desktop computer and without paying.
 
 In addition, I try to include prefatory staves where I can, to show original pitches, clefs and keys;  I  also include auto-generated ‘ambitus’ ranges so you can easily see what the effect of changing pitch and scoring will be.  (Please note, my transcriptions are not made to academic critical standards, they are simply intended to be accurate and useful.)
-How do I start?
+
+## 1.1 <a name='Howdoistart'></a> How do I start?
 
 Theoretically, all you need to do is download Lilypond from lilypond.org. However I also strongly recommend downloading Frescobaldi (from Frescobaldi.org), which is an excellent Lilypond Editor.  Without Frescobaldi you would just be using a plain text editor like Notepad to tweak the Lilypond source files – perfectly possible but much less than optimal.
 
@@ -207,7 +209,7 @@ Similarly if the only reason you want to change the key signature is because you
 
 A final note is that the key signature has no effect on the pitches in the music. For example changing from f major to c major will remove the b-flat from the key signature, but will not naturalise all the ‘b’ notes in the music.  They will still be b-flats, but notated with accidentals.
 
-##  3. <a name='Whenyoumakeanerror'></a>When you make an error
+##  3. <a name='Whenyoumakeanerror'></a> When you make an error
 
 Sadly one of the inevitable problems of Lilypond’s design is that it is (of course) all too easy to make a typo.  You will then be passing instructions to Lilypond which it doesn’t understand.  If you do this, Lilypond will throw a red error message when you press Ctrl-M, and will probably refuse to produce a PDF output from what you’ve typed.
 
