@@ -281,7 +281,9 @@ I assume:
 
 I bracket staves together to indicate that they have near-identical ranges.  It’s up to you to decide whether to allocate similar voice types to them.
 
-I err on the non-interventionist side when it comes to rhythmic note values because they are a good indicator of tempo.  I try to respect mensural proportion relationships, up to a point.  I will not force the issue, especially if the meaning of the mensural proportion signs is ambiguous or disputable.
+I err on the non-interventionist side when it comes to rhythmic note values because they are a good indicator of tempo.  I know some people prefer them halved but leaving 16th century music in its original note values makes the page look less cluttered and removes almost all quaver beaming quandaries (since quavers were very rarely used in practice).  I try to respect mensural proportion relationships, up to a point.  I will not force the issue, especially if the meaning of the mensural proportion signs is ambiguous or disputable.
+
+I don't put 1950's-style slur marks over melismata; and they clutter the page up badly without adding any useful information about how to sing the music.
 
 I retain original stave names, to give a flavour of the voice types possibly held in mind by the composer, while recognising that these were and still are very flexible.
 
