@@ -1,4 +1,4 @@
 # MusicEditing
 General landing page for my music editing stuff
 
-see [this] (EasyLilypondCustomisation.md)
+See [my easy guide to tweaking my CPDL Lilypond editions](EasyLilypondCustomisation.md)
